@@ -1,0 +1,24 @@
+name: "${project.artifactId}"
+main: "${project.groupId}.${project.artifactId}"
+version: "${project.version}"
+description: "Wearable hats!"
+author: "BillyGalbreath"
+api-version: "1.13"
+
+commands:
+  hats:
+    description: Reload configs
+    usage: /<command> (reload)
+    permission: command.hats
+  hat:
+    description: Give hat to player
+    usage: /<command> (player) (hat)
+    permission: command.hat
+
+permissions:
+  command.hats:
+    description: Allows reloading configs
+    default: op
+  command.hat:
+    description: Allows giving hat to player
+    default: op
