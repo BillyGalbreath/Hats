@@ -10,27 +10,28 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
+import sun.text.normalizer.UCharacter;
 
 import java.util.Map;
 
 public enum Hat {
-    SS_GEORGIE(1, "SS Georgie", null),
-    WIZARD_HAT_2(2, "Wizard Hat #2", null),
-    WIZARD_HAT(3, "Wizard Hat", null),
-    ROUND_TOP_HAT_WHITE_BLACK(4, "Round Top Hat (white/black)", null),
-    ROUND_TOP_HAT_BLACK_WHITE(5, "Round Top Hat (black/white)", null),
-    TOP_HAT_BLACK_YELLOW(6, "Top Hat (black/yellow)", null),
-    TOP_HAT_BLACK_WHITE(7, "Top Hat (black/white)", null),
-    TOP_HAT_BLACK_RED(8, "Top Hat (black/red)", null),
-    TOP_HAT_BLACK_GREY(9, "Top Hat (black/grey)", null),
-    TOP_HAT_BLACK_BLUE(10, "Top Hat (black/blue)", null),
-    SQUID_HAT(11, "Squid Hat", null),
-    SOMBRERO(12, "Sombrero", null),
-    SANTA_CAP(13, "Santa Cap", null),
-    OCELOT_TUXEDO(14, "Ocelot Tuxedo", null),
-    OCELOT_TABBY(15, "Ocelot Tabby", null),
-    OCELOT_SIAMESE(16, "Ocelot Siamese", null),
-    OCELOT(17, "Ocelot", null),
+    SS_GEORGIE(1, "SS Georgie", new Shape(" P ", "PPP", "   "), new Ingredient('P', Material.PAPER)),
+    WIZARD_HAT_2(2, "Wizard Hat #2", new Shape(" P ", "Y P", "PYP"), new Ingredient('P', Material.PURPLE_CONCRETE), new Ingredient('Y', Material.YELLOW_CONCRETE)),
+    WIZARD_HAT(3, "Wizard Hat", new Shape("B  ", "BB ", "BDB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('D', Material.DIAMOND)),
+    ROUND_TOP_HAT_WHITE_BLACK(4, "Round Top Hat (white/black)", new Shape(" W ", " W ", "WBW"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('W', Material.WHITE_WOOL)),
+    ROUND_TOP_HAT_BLACK_WHITE(5, "Round Top Hat (black/white)", new Shape(" B ", " B ", "BWB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('W', Material.WHITE_WOOL)),
+    TOP_HAT_BLACK_YELLOW(6, "Top Hat (black/yellow)", new Shape(" B ", " B ", "BGB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('G', Material.GOLD_INGOT)),
+    TOP_HAT_BLACK_WHITE(7, "Top Hat (black/white)", new Shape(" B ", " B ", "BWB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('W', Material.IRON_INGOT)),
+    TOP_HAT_BLACK_RED(8, "Top Hat (black/red)", new Shape(" B ", " B ", "BRB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('R', Material.REDSTONE)),
+    TOP_HAT_BLACK_GREY(9, "Top Hat (black/grey)", new Shape(" B ", " B ", "BGB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('G', Material.GRAY_CONCRETE)),
+    TOP_HAT_BLACK_BLUE(10, "Top Hat (black/blue)", new Shape(" B ", " B ", "BLB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('L', Material.LAPIS_LAZULI)),
+    SQUID_HAT(11, "Squid Hat", new Shape("   ", " S ", " H "), new Ingredient('S', Material.SQUID_SPAWN_EGG), new Ingredient('H', Material.LEATHER_HELMET)),
+    SOMBRERO(12, "Sombrero", new Shape("   ", "WHR", "HHH"), new Ingredient('R', Material.RED_WOOL), new Ingredient('W', Material.WHITE_WOOL), new Ingredient(  'H', Material.HAY_BLOCK)),
+    SANTA_CAP(13, "Santa Cap", null), // Event/cash shop
+    OCELOT_TUXEDO(14, "Ocelot Tuxedo", null), // Mob drop
+    OCELOT_TABBY(15, "Ocelot Tabby", null), // Mob drop
+    OCELOT_SIAMESE(16, "Ocelot Siamese", null), // Mob drop
+    OCELOT(17, "Ocelot", null), // Mob drop
     MULLET(18, "Mullet", null),
     HIGH_HAT(19, "High Hat", null),
     CAT_EARS_HEADPHONES(20, "Cat Ears Headphones", null),
@@ -40,8 +41,8 @@ public enum Hat {
     EYE_BAND(24, "Eye Band", null),
     COWBOY_HAT(25, "Cowboy Hat", new Shape("   ", " W ", "WWW"), new Ingredient('W', Material.BROWN_WOOL)),
     CLOAK(26, "Cloak", null),
-    CAKE_HAT(27, "Cake Hat", null),
-    AFRO(28, "Afro", null);
+    CAKE_HAT(27, "Cake Hat", null), // Event
+    AFRO(28, "Afro", new Shape("BBB", "B B", "B B"), new Ingredient('B', Material.BLACK_CONCRETE));
 
     private final int model;
     private final String name;
