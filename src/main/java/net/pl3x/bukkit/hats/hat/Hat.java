@@ -10,7 +10,6 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
-import sun.text.normalizer.UCharacter;
 
 import java.util.Map;
 
