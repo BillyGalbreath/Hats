@@ -31,17 +31,49 @@ public enum Hat {
     OCELOT_TABBY(15, "Ocelot Tabby", null), // Mob drop
     OCELOT_SIAMESE(16, "Ocelot Siamese", null), // Mob drop
     OCELOT(17, "Ocelot", null), // Mob drop
-    MULLET(18, "Mullet", null),
-    HIGH_HAT(19, "High Hat", null),
-    CAT_EARS_HEADPHONES(20, "Cat Ears Headphones", null),
-    HARD_HAT_ON(21, "Hard Hat (on)", null),
-    HARD_HAT_OFF(22, "Hard Hat (off)", null),
-    FEZ(23, "Fez", null),
-    EYE_BAND(24, "Eye Band", null),
+    MULLET(18, "Mullet", new Shape("yyy", "  Y", "  Y"), new Ingredient('y', Material.YELLOW_CARPET), new Ingredient('Y', Material.YELLOW_WOOL)),
+    HIGH_HAT(19, "High Hat", new Shape(" B ", "GGG", "  P"), new Ingredient('B', Material.BLACK_WOOL), new Ingredient('G', Material.GRAY_CARPET), new Ingredient( 'P', Material.GLASS_PANE)),
+    CAT_EARS_HEADPHONES(20, "Cat Ears Headphones", new Shape("OOO", "O O", "W  W"), new Ingredient('O', Material.ORANGE_CARPET), new Ingredient('Y', Material.WHITE_WOOL)),
+    HARD_HAT_ON(21, "Hard Hat (on)", new Shape("YYY", "YTY", "   "), new Ingredient('Y', Material.YELLOW_CONCRETE), new Ingredient('T', Material.TORCH)),
+    HARD_HAT_OFF(22, "Hard Hat (off)", new Shape("YYY", "Y Y", "   "), new Ingredient('Y', Material.YELLOW_CONCRETE)),
+    FEZ(23, "Fez", new Shape("  W", " RR", " RR"), new Ingredient('W', Material.WHEAT), new Ingredient('R', Material.RED_WOOL)),
+    EYE_BAND(24, "Eye Band", new Shape("   ", "BBS", "   "), new Ingredient('B', Material.BLACK_WOOL), new Ingredient('S', Material.SPIDER_EYE)),
     COWBOY_HAT(25, "Cowboy Hat", new Shape("   ", " W ", "WWW"), new Ingredient('W', Material.BROWN_WOOL)),
-    CLOAK(26, "Cloak", null),
+    CLOAK(26, "Cloak", new Shape("BBB", "B B", "B B"), new Ingredient('B', Material.BLACK_WOOL)),
     CAKE_HAT(27, "Cake Hat", null), // Event
-    AFRO(28, "Afro", new Shape("BBB", "B B", "B B"), new Ingredient('B', Material.BLACK_CONCRETE));
+    AFRO(28, "Afro", new Shape("BBB", "B B", "B B"), new Ingredient('B', Material.BLACK_CONCRETE)),
+    UNEMPLOYED_DESERT(29, "Desert Unemployed", null), // Mob drop
+    CLERIC_DESERT(30, "Desert Cleric", null), // Mob drop
+    LEATHERWORKER_DESERT(31, "Desert Leatherworker", null), // Mob drop
+    MASON_DESERT(32, "Desert Mason", null), // Mob drop
+    NITWIT_DESERT(33, "Desert Nitwit", null), // Mob drop
+    TOOLSMITH_DESERT(34, "Desert Toolsmith", null), // Mob drop
+    UNEMPLOYED_SAVANNA(35, "Savanna Unemployed", null), // Mob drop
+    CLERIC_SAVANNA(36, "Savanna Cleric", null), // Mob drop
+    LEATHERWORKER_SAVANNA(37, "Savanna Leatherworker", null), // Mob drop
+    MASON_SAVANNA(38, "Savanna Mason", null), // Mob drop
+    NITWIT_SAVANNA(39, "Savanna Nitwit", null), // Mob drop
+    TOOLSMITH_SAVANNA(40, "Savanna Toolsmith", null), // Mob drop
+    UNEMPLOYED_SNOW(41, "Snow Unemployed", null), // Mob drop
+    CLERIC_SNOW(42, "Snow Cleric", null), // Mob drop
+    LEATHERWORKER_SNOW(43, "Snow Leatherworker", null), // Mob drop
+    MASON_SNOW(44, "Snow Mason", null), // Mob drop
+    NITWIT_SNOW(45, "Snow Nitwit", null), // Mob drop
+    TOOLSMITH_SNOW(46, "Snow Toolsmith", null), // Mob drop
+    UNEMPLOYED_SWAMP(47, "Swamp Unemployed", null), // Mob drop
+    CLERIC_SWAMP(48, "Swamp Cleric", null), // Mob drop
+    LEATHERWORKER_SWAMP(49, "Swamp Leatherworker", null), // Mob drop
+    MASON_SWAMP(50, "Swamp Mason", null), // Mob drop
+    NITWIT_SWAMP(51, "Swamp Nitwit", null), // Mob drop
+    TOOLSMITH_SWAMP(52, "Swamp Toolsmith", null), // Mob drop
+    ARMORER_DESERT(53, "Desert Armorer", null), // Mob drop
+    ARMORER_JUNGLE(54, "Jungle Armorer", null), // Mob drop
+    ARMORER_PLAINS(55, "Plains Armorer", null), // Mob drop
+    ARMORER_SAVANNA(56, "Savanna Armorer", null), // Mob drop
+    ARMORER_SNOW(57, "Snow Armorer", null), // Mob drop
+    ARMORER_SWAMP(58, "Swamp Armorer", null), // Mob drop
+    ARMORER_TAIGA(59, "Taiga Armorer", null) // Mob drop
+    ;
 
     private final int model;
     private final String name;
