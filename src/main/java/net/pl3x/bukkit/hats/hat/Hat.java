@@ -36,7 +36,7 @@ public enum Hat {
     CAT_EARS_HEADPHONES(20, "Cat Ears Headphones", null),
     HARD_HAT_ON(21, "Hard Hat (on)", null),
     HARD_HAT_OFF(22, "Hard Hat (off)", null),
-    FEz(23, "Fez", null),
+    FEZ(23, "Fez", null),
     EYE_BAND(24, "Eye Band", null),
     COWBOY_HAT(25, "Cowboy Hat", new Shape("   ", " W ", "WWW"), new Ingredient('W', Material.BROWN_WOOL)),
     CLOAK(26, "Cloak", null),
