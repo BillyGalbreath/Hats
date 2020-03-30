@@ -14,121 +14,140 @@ import org.bukkit.inventory.ShapedRecipe;
 import java.util.Map;
 
 public enum Hat {
-    SS_GEORGIE(1, "SS Georgie", new Shape(" P ", "PPP", "   "), new Ingredient('P', Material.PAPER)),
-    WIZARD_HAT_2(2, "Wizard Hat #2", new Shape(" P ", "Y P", "PYP"), new Ingredient('P', Material.PURPLE_CONCRETE), new Ingredient('Y', Material.YELLOW_CONCRETE)),
-    WIZARD_HAT(3, "Wizard Hat", new Shape("B  ", "BB ", "BDB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('D', Material.DIAMOND)),
-    ROUND_TOP_HAT_WHITE_BLACK(4, "Round Top Hat (white/black)", new Shape(" W ", " W ", "WBW"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('W', Material.WHITE_WOOL)),
-    ROUND_TOP_HAT_BLACK_WHITE(5, "Round Top Hat (black/white)", new Shape(" B ", " B ", "BWB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('W', Material.WHITE_WOOL)),
-    TOP_HAT_BLACK_YELLOW(6, "Top Hat (black/yellow)", new Shape(" B ", " B ", "BGB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('G', Material.GOLD_INGOT)),
-    TOP_HAT_BLACK_WHITE(7, "Top Hat (black/white)", new Shape(" B ", " B ", "BWB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('W', Material.IRON_INGOT)),
-    TOP_HAT_BLACK_RED(8, "Top Hat (black/red)", new Shape(" B ", " B ", "BRB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('R', Material.REDSTONE)),
-    TOP_HAT_BLACK_GREY(9, "Top Hat (black/grey)", new Shape(" B ", " B ", "BGB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('G', Material.GRAY_CONCRETE)),
-    TOP_HAT_BLACK_BLUE(10, "Top Hat (black/blue)", new Shape(" B ", " B ", "BLB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('L', Material.LAPIS_LAZULI)),
-    SQUID_HAT(11, "Squid Hat", new Shape("   ", " S ", " H "), new Ingredient('S', Material.SQUID_SPAWN_EGG), new Ingredient('H', Material.LEATHER_HELMET)),
-    SOMBRERO(12, "Sombrero", new Shape("   ", "WHR", "HHH"), new Ingredient('R', Material.RED_WOOL), new Ingredient('W', Material.WHITE_WOOL), new Ingredient(  'H', Material.HAY_BLOCK)),
-    SANTA_CAP(13, "Santa Cap", null), // Event/cash shop
-    OCELOT_TUXEDO(14, "Ocelot Tuxedo", null), // Mob drop
-    OCELOT_TABBY(15, "Ocelot Tabby", null), // Mob drop
-    OCELOT_SIAMESE(16, "Ocelot Siamese", null), // Mob drop
-    OCELOT(17, "Ocelot", null), // Mob drop
-    MULLET(18, "Mullet", new Shape("yyy", "  Y", "  Y"), new Ingredient('y', Material.YELLOW_CARPET), new Ingredient('Y', Material.YELLOW_WOOL)),
-    HIGH_HAT(19, "High Hat", new Shape(" B ", "GGG", "  P"), new Ingredient('B', Material.BLACK_WOOL), new Ingredient('G', Material.GRAY_CARPET), new Ingredient( 'P', Material.GLASS_PANE)),
-    CAT_EARS_HEADPHONES(20, "Cat Ears Headphones", new Shape("OOO", "O O", "W W"), new Ingredient('O', Material.ORANGE_CARPET), new Ingredient('W', Material.WHITE_WOOL)),
-    HARD_HAT_ON(21, "Hard Hat (on)", new Shape("YYY", "YTY", "   "), new Ingredient('Y', Material.YELLOW_CONCRETE), new Ingredient('T', Material.TORCH)),
-    HARD_HAT_OFF(22, "Hard Hat (off)", new Shape("YYY", "Y Y", "   "), new Ingredient('Y', Material.YELLOW_CONCRETE)),
-    FEZ(23, "Fez", new Shape("  W", " RR", " RR"), new Ingredient('W', Material.WHEAT), new Ingredient('R', Material.RED_WOOL)),
-    EYE_BAND(24, "Eye Band", new Shape("   ", "BBS", "   "), new Ingredient('B', Material.BLACK_WOOL), new Ingredient('S', Material.SPIDER_EYE)),
-    COWBOY_HAT(25, "Cowboy Hat", new Shape("   ", " W ", "WWW"), new Ingredient('W', Material.BROWN_WOOL)),
-    CLOAK(26, "Cloak", new Shape("BBB", "B B", "B B"), new Ingredient('B', Material.BLACK_WOOL)),
-    CAKE_HAT(27, "Cake Hat", null), // Event
-    AFRO(28, "Afro", new Shape("BBB", "B B", "B B"), new Ingredient('B', Material.BLACK_CONCRETE)),
-    UNEMPLOYED_DESERT(29, "Desert Unemployed", null), // Mob drop
-    CLERIC_DESERT(30, "Desert Cleric", null), // Mob drop
-    LEATHERWORKER_DESERT(31, "Desert Leatherworker", null), // Mob drop
-    MASON_DESERT(32, "Desert Mason", null), // Mob drop
-    NITWIT_DESERT(33, "Desert Nitwit", null), // Mob drop
-    TOOLSMITH_DESERT(34, "Desert Toolsmith", null), // Mob drop
-    UNEMPLOYED_SAVANNA(35, "Savanna Unemployed", null), // Mob drop
-    CLERIC_SAVANNA(36, "Savanna Cleric", null), // Mob drop
-    LEATHERWORKER_SAVANNA(37, "Savanna Leatherworker", null), // Mob drop
-    MASON_SAVANNA(38, "Savanna Mason", null), // Mob drop
-    NITWIT_SAVANNA(39, "Savanna Nitwit", null), // Mob drop
-    TOOLSMITH_SAVANNA(40, "Savanna Toolsmith", null), // Mob drop
-    UNEMPLOYED_SNOW(41, "Snow Unemployed", null), // Mob drop
-    CLERIC_SNOW(42, "Snow Cleric", null), // Mob drop
-    LEATHERWORKER_SNOW(43, "Snow Leatherworker", null), // Mob drop
-    MASON_SNOW(44, "Snow Mason", null), // Mob drop
-    NITWIT_SNOW(45, "Snow Nitwit", null), // Mob drop
-    TOOLSMITH_SNOW(46, "Snow Toolsmith", null), // Mob drop
-    UNEMPLOYED_SWAMP(47, "Swamp Unemployed", null), // Mob drop
-    CLERIC_SWAMP(48, "Swamp Cleric", null), // Mob drop
-    LEATHERWORKER_SWAMP(49, "Swamp Leatherworker", null), // Mob drop
-    MASON_SWAMP(50, "Swamp Mason", null), // Mob drop
-    NITWIT_SWAMP(51, "Swamp Nitwit", null), // Mob drop
-    TOOLSMITH_SWAMP(52, "Swamp Toolsmith", null), // Mob drop
-    ARMORER_DESERT(53, "Desert Armorer", null), // Mob drop
-    ARMORER_JUNGLE(54, "Jungle Armorer", null), // Mob drop
-    ARMORER_PLAINS(55, "Plains Armorer", null), // Mob drop
-    ARMORER_SAVANNA(56, "Savanna Armorer", null), // Mob drop
-    ARMORER_SNOW(57, "Snow Armorer", null), // Mob drop
-    ARMORER_SWAMP(58, "Swamp Armorer", null), // Mob drop
-    ARMORER_TAIGA(59, "Taiga Armorer", null), // Mob drop
-    BUTCHER_DESERT(60, "Desert Butcher", null), // Mob drop
-    BUTCHER_JUNGLE(61, "Jungle Butcher", null), // Mob drop
-    BUTCHER_PLAINS(62, "Plains Butcher", null), // Mob drop
-    BUTCHER_SAVANNA(63, "Savanna Butcher", null), // Mob drop
-    BUTCHER_SNOW(64, "Snow Butcher", null), // Mob drop
-    BUTCHER_SWAMP(65, "Swamp Butcher", null), // Mob drop
-    BUTCHER_TAIGA(66, "Taiga Butcher", null), // Mob drop
-    CARTOGRAPHER_DESERT(67, "Desert Cartographer", null), // Mob drop
-    CARTOGRAPHER_JUNGLE(68, "Jungle Cartographer", null), // Mob drop
-    CARTOGRAPHER_PLAINS(69, "Plains Cartographer", null), // Mob drop
-    CARTOGRAPHER_SAVANNA(70, "Savanna Cartographer", null), // Mob drop
-    CARTOGRAPHER_SNOW(71, "Snow Cartographer", null), // Mob drop
-    CARTOGRAPHER_SWAMP(72, "Swamp Cartographer", null), // Mob drop
-    CARTOGRAPHER_TAIGA(73, "Taiga Cartographer", null), // Mob drop
-    FARMER_DESERT(74, "Desert Farmer", null), // Mob drop
-    FARMER_JUNGLE(75, "Jungle Farmer", null), // Mob drop
-    FARMER_PLAINS(76, "Plains Farmer", null), // Mob drop
-    FARMER_SAVANNA(77, "Savanna Farmer", null), // Mob drop
-    FARMER_SNOW(78, "Snow Farmer", null), // Mob drop
-    FARMER_SWAMP(79, "Swamp Farmer", null), // Mob drop
-    FARMER_TAIGA(80, "Taiga Farmer", null), // Mob drop
-    FISHERMAN_DESERT(81, "Desert Fisherman", null), // Mob drop
-    FISHERMAN_JUNGLE(82, "Jungle Fisherman", null), // Mob drop
-    FISHERMAN_PLAINS(83, "Plains Fisherman", null), // Mob drop
-    FISHERMAN_SAVANNA(84, "Savanna Fisherman", null), // Mob drop
-    FISHERMAN_SNOW(85, "Snow Fisherman", null), // Mob drop
-    FISHERMAN_SWAMP(86, "Swamp Fisherman", null), // Mob drop
-    FISHERMAN_TAIGA(87, "Taiga Fisherman", null), // Mob drop
-    FLETCHER_DESERT(88, "Desert Fletcher", null), // Mob drop
-    FLETCHER_JUNGLE(89, "Jungle Fletcher", null), // Mob drop
-    FLETCHER_PLAINS(90, "Plains Fletcher", null), // Mob drop
-    FLETCHER_SAVANNA(91, "Savanna Fletcher", null), // Mob drop
-    FLETCHER_SNOW(92, "Snow Fletcher", null), // Mob drop
-    FLETCHER_SWAMP(93, "Swamp Fletcher", null), // Mob drop
-    FLETCHER_TAIGA(94, "Taiga Fletcher", null), // Mob drop
-    LIBRARIAN_DESERT(95, "Desert Librarian", null), // Mob drop
-    LIBRARIAN_JUNGLE(96, "Jungle Librarian", null), // Mob drop
-    LIBRARIAN_PLAINS(97, "Plains Librarian", null), // Mob drop
-    LIBRARIAN_SAVANNA(98, "Savanna Librarian", null), // Mob drop
-    LIBRARIAN_SNOW(99, "Snow Librarian", null), // Mob drop
-    LIBRARIAN_SWAMP(100, "Swamp Librarian", null), // Mob drop
-    LIBRARIAN_TAIGA(101, "Taiga Librarian", null), // Mob drop
-    SHEPHERD_DESERT(102, "Desert Shepherd", null), // Mob drop
-    SHEPHERD_JUNGLE(103, "Jungle Shepherd", null), // Mob drop
-    SHEPHERD_PLAINS(104, "Plains Shepherd", null), // Mob drop
-    SHEPHERD_SAVANNA(105, "Savanna Shepherd", null), // Mob drop
-    SHEPHERD_SNOW(106, "Snow Shepherd", null), // Mob drop
-    SHEPHERD_SWAMP(107, "Swamp Shepherd", null), // Mob drop
-    SHEPHERD_TAIGA(108, "Taiga Shepherd", null), // Mob drop
-    WEAPONSMITH_DESERT(109, "Taiga Weaponsmith", null), // Mob drop
-    WEAPONSMITH_JUNGLE(110, "Taiga Weaponsmith", null), // Mob drop
-    WEAPONSMITH_PLAINS(111, "Taiga Weaponsmith", null), // Mob drop
-    WEAPONSMITH_SAVANNA(112, "Savanna Weaponsmith", null), // Mob drop
-    WEAPONSMITH_SNOW(113, "Snow Weaponsmith", null), // Mob drop
-    WEAPONSMITH_SWAMP(114, "Swamp Weaponsmith", null), // Mob drop
-    WEAPONSMITH_TAIGA(115, "Taiga Weaponsmith", null), // Mob drop
+    UNEMPLOYED_DESERT(1, "Desert Unemployed"),
+    //UNEMPLOYED_JUNGLE(2, "Jungle Unemployed"), // Not used
+    //UNEMPLOYED_PLAINS(3, "Plains Unemployed"), // Not used
+    UNEMPLOYED_SAVANNA(4, "Savanna Unemployed"),
+    UNEMPLOYED_SNOW(5, "Snow Unemployed"),
+    UNEMPLOYED_SWAMP(6, "Swamp Unemployed"),
+    //UNEMPLOYED_TAIGA(7, "Taiga Unemployed"), // Not used
+    ARMORER_DESERT(8, "Desert Armorer"),
+    ARMORER_JUNGLE(9, "Jungle Armorer"),
+    ARMORER_PLAINS(10, "Plains Armorer"),
+    ARMORER_SAVANNA(11, "Savanna Armorer"),
+    ARMORER_SNOW(12, "Snow Armorer"),
+    ARMORER_SWAMP(13, "Swamp Armorer"),
+    ARMORER_TAIGA(14, "Taiga Armorer"),
+    BUTCHER_DESERT(15, "Desert Butcher"),
+    BUTCHER_JUNGLE(16, "Jungle Butcher"),
+    BUTCHER_PLAINS(17, "Plains Butcher"),
+    BUTCHER_SAVANNA(18, "Savanna Butcher"),
+    BUTCHER_SNOW(19, "Snow Butcher"),
+    BUTCHER_SWAMP(20, "Swamp Butcher"),
+    BUTCHER_TAIGA(21, "Taiga Butcher"),
+    CARTOGRAPHER_DESERT(22, "Desert Cartographer"),
+    CARTOGRAPHER_JUNGLE(23, "Jungle Cartographer"),
+    CARTOGRAPHER_PLAINS(24, "Plains Cartographer"),
+    CARTOGRAPHER_SAVANNA(25, "Savanna Cartographer"),
+    CARTOGRAPHER_SNOW(26, "Snow Cartographer"),
+    CARTOGRAPHER_SWAMP(27, "Swamp Cartographer"),
+    CARTOGRAPHER_TAIGA(28, "Taiga Cartographer"),
+    CLERIC_DESERT(29, "Desert Cleric"),
+    //CLERIC_JUNGLE(30, "Jungle Cleric"), // Not used
+    //CLERIC_PLAINS(31, "Plains Cleric"), // Not used
+    CLERIC_SAVANNA(32, "Savanna Cleric"),
+    CLERIC_SNOW(33, "Snow Cleric"),
+    CLERIC_SWAMP(34, "Swamp Cleric"),
+    //CLERIC_TAIGA(35, "Taiga Cleric"), // Not used
+    FARMER_DESERT(36, "Desert Farmer"),
+    FARMER_JUNGLE(37, "Jungle Farmer"),
+    FARMER_PLAINS(38, "Plains Farmer"),
+    FARMER_SAVANNA(39, "Savanna Farmer"),
+    FARMER_SNOW(40, "Snow Farmer"),
+    FARMER_SWAMP(41, "Swamp Farmer"),
+    FARMER_TAIGA(42, "Taiga Farmer"),
+    FISHERMAN_DESERT(43, "Desert Fisherman"),
+    FISHERMAN_JUNGLE(44, "Jungle Fisherman"),
+    FISHERMAN_PLAINS(45, "Plains Fisherman"),
+    FISHERMAN_SAVANNA(46, "Savanna Fisherman"),
+    FISHERMAN_SNOW(47, "Snow Fisherman"),
+    FISHERMAN_SWAMP(48, "Swamp Fisherman"),
+    FISHERMAN_TAIGA(49, "Taiga Fisherman"),
+    FLETCHER_DESERT(50, "Desert Fletcher"),
+    FLETCHER_JUNGLE(51, "Jungle Fletcher"),
+    FLETCHER_PLAINS(52, "Plains Fletcher"),
+    FLETCHER_SAVANNA(53, "Savanna Fletcher"),
+    FLETCHER_SNOW(54, "Snow Fletcher"),
+    FLETCHER_SWAMP(55, "Swamp Fletcher"),
+    FLETCHER_TAIGA(56, "Taiga Fletcher"),
+    LEATHERWORKER_DESERT(57, "Desert Leatherworker"),
+    //LEATHERWORKER_JUNGLE(58, "Jungle Leatherworker"), // Not used
+    //LEATHERWORKER_PLAINS(59, "Plains Leatherworker"), // Not used
+    LEATHERWORKER_SAVANNA(60, "Savanna Leatherworker"),
+    LEATHERWORKER_SNOW(61, "Snow Leatherworker"),
+    LEATHERWORKER_SWAMP(62, "Swamp Leatherworker"),
+    //LEATHERWORKER_TAIGA(63, "Taiga Leatherworker"), // Not used
+    LIBRARIAN_DESERT(64, "Desert Librarian"),
+    LIBRARIAN_JUNGLE(65, "Jungle Librarian"),
+    LIBRARIAN_PLAINS(66, "Plains Librarian"),
+    LIBRARIAN_SAVANNA(67, "Savanna Librarian"),
+    LIBRARIAN_SNOW(68, "Snow Librarian"),
+    LIBRARIAN_SWAMP(69, "Swamp Librarian"),
+    LIBRARIAN_TAIGA(70, "Taiga Librarian"),
+    MASON_DESERT(71, "Desert Mason"),
+    //MASON_JUNGLE(72, "Jungle Mason"), // Not used
+    //MASON_PLAINS(73, "Plains Mason"), // Not used
+    MASON_SAVANNA(74, "Savanna Mason"),
+    MASON_SNOW(75, "Snow Mason"),
+    MASON_SWAMP(76, "Swamp Mason"),
+    //MASON_TAIGA(77, "Taiga Mason"), // Not used
+    NITWIT_DESERT(78, "Desert Nitwit"),
+    //NITWIT_JUNGLE(79, "Jungle Nitwit"), // Not used
+    //NITWIT_PLAINS(80, "Plains Nitwit"), // Not used
+    NITWIT_SAVANNA(81, "Savanna Nitwit"),
+    NITWIT_SNOW(82, "Snow Nitwit"),
+    NITWIT_SWAMP(83, "Swamp Nitwit"),
+    //NITWIT_TAIGA(84, "Taiga Nitwit"), // Not used
+    SHEPHERD_DESERT(85, "Desert Shepherd"),
+    SHEPHERD_JUNGLE(86, "Jungle Shepherd"),
+    SHEPHERD_PLAINS(87, "Plains Shepherd"),
+    SHEPHERD_SAVANNA(88, "Savanna Shepherd"),
+    SHEPHERD_SNOW(89, "Snow Shepherd"),
+    SHEPHERD_SWAMP(90, "Swamp Shepherd"),
+    SHEPHERD_TAIGA(91, "Taiga Shepherd"),
+    TOOLSMITH_DESERT(92, "Desert Toolsmith"),
+    //TOOLSMITH_JUNGLE(93, "Jungle Toolsmith"), // Not used
+    //TOOLSMITH_PLAINS(94, "Plains Toolsmith"), // Not used
+    TOOLSMITH_SAVANNA(95, "Savanna Toolsmith"),
+    TOOLSMITH_SNOW(96, "Snow Toolsmith"),
+    TOOLSMITH_SWAMP(97, "Swamp Toolsmith"),
+    //TOOLSMITH_TAIGA(98, "Taiga Toolsmith"), // Not used
+    WEAPONSMITH_DESERT(99, "Desert Weaponsmith"),
+    WEAPONSMITH_JUNGLE(100, "Jungle Weaponsmith"),
+    WEAPONSMITH_PLAINS(101, "Plains Weaponsmith"),
+    WEAPONSMITH_SAVANNA(102, "Savanna Weaponsmith"),
+    WEAPONSMITH_SNOW(103, "Snow Weaponsmith"),
+    WEAPONSMITH_SWAMP(104, "Swamp Weaponsmith"),
+    WEAPONSMITH_TAIGA(105, "Taiga Weaponsmith"),
+
+    SS_GEORGIE(106, "SS Georgie", new Shape(" P ", "PPP", "   "), new Ingredient('P', Material.PAPER)),
+    WIZARD_HAT_2(107, "Wizard Hat #2", new Shape(" P ", "Y P", "PYP"), new Ingredient('P', Material.PURPLE_CONCRETE), new Ingredient('Y', Material.YELLOW_CONCRETE)),
+    WIZARD_HAT(108, "Wizard Hat", new Shape("B  ", "BB ", "BDB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('D', Material.DIAMOND)),
+    ROUND_TOP_HAT_WHITE_BLACK(109, "Round Top Hat (white/black)", new Shape(" W ", " W ", "WBW"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('W', Material.WHITE_WOOL)),
+    ROUND_TOP_HAT_BLACK_WHITE(110, "Round Top Hat (black/white)", new Shape(" B ", " B ", "BWB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('W', Material.WHITE_WOOL)),
+    TOP_HAT_BLACK_YELLOW(111, "Top Hat (black/yellow)", new Shape(" B ", " B ", "BGB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('G', Material.GOLD_INGOT)),
+    TOP_HAT_BLACK_WHITE(112, "Top Hat (black/white)", new Shape(" B ", " B ", "BWB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('W', Material.IRON_INGOT)),
+    TOP_HAT_BLACK_RED(113, "Top Hat (black/red)", new Shape(" B ", " B ", "BRB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('R', Material.REDSTONE)),
+    TOP_HAT_BLACK_GREY(114, "Top Hat (black/grey)", new Shape(" B ", " B ", "BGB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('G', Material.GRAY_CONCRETE)),
+    TOP_HAT_BLACK_BLUE(115, "Top Hat (black/blue)", new Shape(" B ", " B ", "BLB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('L', Material.LAPIS_LAZULI)),
+    SQUID_HAT(116, "Squid Hat", new Shape("   ", " S ", " H "), new Ingredient('S', Material.SQUID_SPAWN_EGG), new Ingredient('H', Material.LEATHER_HELMET)),
+    SOMBRERO(117, "Sombrero", new Shape("   ", "WHR", "HHH"), new Ingredient('R', Material.RED_WOOL), new Ingredient('W', Material.WHITE_WOOL), new Ingredient('H', Material.HAY_BLOCK)),
+    SANTA_CAP(118, "Santa Cap"), // Event/cash shop
+    OCELOT_TUXEDO(119, "Ocelot Tuxedo"), // Mob drop
+    OCELOT_TABBY(120, "Ocelot Tabby"), // Mob drop
+    OCELOT_SIAMESE(121, "Ocelot Siamese"), // Mob drop
+    OCELOT(122, "Ocelot"), // Mob drop
+    MULLET(123, "Mullet", new Shape("yyy", "  Y", "  Y"), new Ingredient('y', Material.YELLOW_CARPET), new Ingredient('Y', Material.YELLOW_WOOL)),
+    HIGH_HAT(124, "High Hat", new Shape(" B ", "GGG", "  P"), new Ingredient('B', Material.BLACK_WOOL), new Ingredient('G', Material.GRAY_CARPET), new Ingredient('P', Material.GLASS_PANE)),
+    CAT_EARS_HEADPHONES(125, "Cat Ears Headphones", new Shape("OOO", "O O", "W W"), new Ingredient('O', Material.ORANGE_CARPET), new Ingredient('W', Material.WHITE_WOOL)),
+    HARD_HAT_ON(126, "Hard Hat (on)", new Shape("YYY", "YTY", "   "), new Ingredient('Y', Material.YELLOW_CONCRETE), new Ingredient('T', Material.TORCH)),
+    HARD_HAT_OFF(127, "Hard Hat (off)", new Shape("YYY", "Y Y", "   "), new Ingredient('Y', Material.YELLOW_CONCRETE)),
+    FEZ(128, "Fez", new Shape("  W", " RR", " RR"), new Ingredient('W', Material.WHEAT), new Ingredient('R', Material.RED_WOOL)),
+    EYE_BAND(129, "Eye Band", new Shape("   ", "BBS", "   "), new Ingredient('B', Material.BLACK_WOOL), new Ingredient('S', Material.SPIDER_EYE)),
+    COWBOY_HAT(130, "Cowboy Hat", new Shape("   ", " W ", "WWW"), new Ingredient('W', Material.BROWN_WOOL)),
+    CLOAK(131, "Cloak", new Shape("BBB", "B B", "B B"), new Ingredient('B', Material.BLACK_WOOL)),
+    CAKE_HAT(132, "Cake Hat"), // Event
+    AFRO(133, "Afro", new Shape("BBB", "B B", "B B"), new Ingredient('B', Material.BLACK_CONCRETE)),
     ;
 
     private final int model;
@@ -136,6 +155,10 @@ public enum Hat {
     private final ItemStack item;
     private final Shape shape;
     private final Ingredient[] ingredients;
+
+    Hat(int model, String name) {
+        this(model, name, null);
+    }
 
     Hat(int model, String name, Shape shape, Ingredient... ingredients) {
         this.model = model;
