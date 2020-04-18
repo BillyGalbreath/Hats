@@ -120,7 +120,7 @@ public enum Hat {
     WEAPONSMITH_SWAMP(104, "Swamp Weaponsmith"),
     WEAPONSMITH_TAIGA(105, "Taiga Weaponsmith"),
 
-    SS_GEORGIE(106, "SS Georgie", new Shape(" P ", "PPP", "   "), new Ingredient('P', Material.PAPER)),
+    SS_GEORGIE(106, "SS Georgie", new Shape(" P ", "PPP"), new Ingredient('P', Material.PAPER)),
     WIZARD_HAT_2(107, "Wizard Hat #2", new Shape(" P ", "Y P", "PYP"), new Ingredient('P', Material.PURPLE_CONCRETE), new Ingredient('Y', Material.YELLOW_CONCRETE)),
     WIZARD_HAT(108, "Wizard Hat", new Shape("B  ", "BB ", "BDB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('D', Material.DIAMOND)),
     ROUND_TOP_HAT_WHITE_BLACK(109, "Round Top Hat (white/black)", new Shape(" W ", " W ", "WBW"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('W', Material.WHITE_WOOL)),
@@ -130,8 +130,8 @@ public enum Hat {
     TOP_HAT_BLACK_RED(113, "Top Hat (black/red)", new Shape(" B ", " B ", "BRB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('R', Material.REDSTONE)),
     TOP_HAT_BLACK_GREY(114, "Top Hat (black/grey)", new Shape(" B ", " B ", "BGB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('G', Material.GRAY_CONCRETE)),
     TOP_HAT_BLACK_BLUE(115, "Top Hat (black/blue)", new Shape(" B ", " B ", "BLB"), new Ingredient('B', Material.BLACK_CONCRETE), new Ingredient('L', Material.LAPIS_LAZULI)),
-    SQUID_HAT(116, "Squid Hat", new Shape("   ", " S ", " H "), new Ingredient('S', Material.SQUID_SPAWN_EGG), new Ingredient('H', Material.LEATHER_HELMET)),
-    SOMBRERO(117, "Sombrero", new Shape("   ", "WHR", "HHH"), new Ingredient('R', Material.RED_WOOL), new Ingredient('W', Material.WHITE_WOOL), new Ingredient('H', Material.HAY_BLOCK)),
+    SQUID_HAT(116, "Squid Hat", new Shape("S", "H"), new Ingredient('S', Material.SQUID_SPAWN_EGG), new Ingredient('H', Material.LEATHER_HELMET)),
+    SOMBRERO(117, "Sombrero", new Shape("WHR", "HHH"), new Ingredient('R', Material.RED_WOOL), new Ingredient('W', Material.WHITE_WOOL), new Ingredient('H', Material.HAY_BLOCK)),
     SANTA_CAP(118, "Santa Cap"), // Event/cash shop
     OCELOT_TUXEDO(119, "Ocelot Tuxedo"), // Mob drop
     OCELOT_TABBY(120, "Ocelot Tabby"), // Mob drop
@@ -140,14 +140,19 @@ public enum Hat {
     MULLET(123, "Mullet", new Shape("yyy", "  Y", "  Y"), new Ingredient('y', Material.YELLOW_CARPET), new Ingredient('Y', Material.YELLOW_WOOL)),
     HIGH_HAT(124, "High Hat", new Shape(" B ", "GGG", "  P"), new Ingredient('B', Material.BLACK_WOOL), new Ingredient('G', Material.GRAY_CARPET), new Ingredient('P', Material.GLASS_PANE)),
     CAT_EARS_HEADPHONES(125, "Cat Ears Headphones", new Shape("OOO", "O O", "W W"), new Ingredient('O', Material.ORANGE_CARPET), new Ingredient('W', Material.WHITE_WOOL)),
-    HARD_HAT_ON(126, "Hard Hat (on)", new Shape("YYY", "YTY", "   "), new Ingredient('Y', Material.YELLOW_CONCRETE), new Ingredient('T', Material.TORCH)),
-    HARD_HAT_OFF(127, "Hard Hat (off)", new Shape("YYY", "Y Y", "   "), new Ingredient('Y', Material.YELLOW_CONCRETE)),
-    FEZ(128, "Fez", new Shape("  W", " RR", " RR"), new Ingredient('W', Material.WHEAT), new Ingredient('R', Material.RED_WOOL)),
-    EYE_BAND(129, "Eye Band", new Shape("   ", "BBS", "   "), new Ingredient('B', Material.BLACK_WOOL), new Ingredient('S', Material.SPIDER_EYE)),
-    COWBOY_HAT(130, "Cowboy Hat", new Shape("   ", " W ", "WWW"), new Ingredient('W', Material.BROWN_WOOL)),
+    HARD_HAT_ON(126, "Hard Hat (on)", new Shape("YYY", "YTY"), new Ingredient('Y', Material.YELLOW_CONCRETE), new Ingredient('T', Material.TORCH)),
+    HARD_HAT_OFF(127, "Hard Hat (off)", new Shape("YYY", "Y Y"), new Ingredient('Y', Material.YELLOW_CONCRETE)),
+    FEZ(128, "Fez", new Shape(" W", "RR", "RR"), new Ingredient('W', Material.WHEAT), new Ingredient('R', Material.RED_WOOL)),
+    EYE_BAND(129, "Eye Band", new Shape("BBS"), new Ingredient('B', Material.BLACK_WOOL), new Ingredient('S', Material.SPIDER_EYE)),
+    COWBOY_HAT(130, "Cowboy Hat", new Shape(" W ", "WWW"), new Ingredient('W', Material.BROWN_WOOL)),
     CLOAK(131, "Cloak", new Shape("BBB", "B B", "B B"), new Ingredient('B', Material.BLACK_WOOL)),
     CAKE_HAT(132, "Cake Hat"), // Event
     AFRO(133, "Afro", new Shape("BBB", "B B", "B B"), new Ingredient('B', Material.BLACK_CONCRETE)),
+
+    CROWN_IRON(134, "Iron Crown", new Shape("IEI", "III"), new Ingredient('E', Material.EMERALD), new Ingredient('I', Material.IRON_INGOT)),
+    CROWN_GOLD(135, "Gold Crown", new Shape("GEG", "GGG"), new Ingredient('E', Material.EMERALD), new Ingredient('G', Material.GOLD_INGOT)),
+    CROWN_DIAMOND(136, "Diamond Crown", new Shape("DED", "DDD"), new Ingredient('E', Material.EMERALD), new Ingredient('D', Material.DIAMOND)),
+    CROWN_AETHERIAL(137, "Aetherial Crown"), // epic crate
     ;
 
     private final int model;
@@ -188,7 +193,7 @@ public enum Hat {
         }
         NamespacedKey key = new NamespacedKey(Hats.getInstance(), name().toLowerCase());
         ShapedRecipe recipe = new ShapedRecipe(key, item);
-        recipe.shape(shape.getRow1(), shape.getRow2(), shape.getRow3());
+        recipe.shape(shape.getRows());
         for (Ingredient ingredient : ingredients) {
             recipe.setIngredient(ingredient.getCharacter(), ingredient.getMaterial());
         }
