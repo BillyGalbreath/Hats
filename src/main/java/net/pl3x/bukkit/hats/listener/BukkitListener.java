@@ -2,6 +2,7 @@ package net.pl3x.bukkit.hats.listener;
 
 import net.pl3x.bukkit.hats.hat.Hat;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Cancellable;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -88,9 +89,6 @@ public class BukkitListener implements Listener {
 
     private void processInteractEvent(PlayerEvent event) {
         PlayerInventory inv = event.getPlayer().getInventory();
-        if (inv.getHelmet() != null) {
-            return; // already wearing a helmet
-        }
 
         ItemStack item = inv.getItemInMainHand();
         EquipmentSlot slot = EquipmentSlot.HAND;
@@ -102,7 +100,13 @@ public class BukkitListener implements Listener {
             }
         }
 
-        inv.setHelmet(item);
-        inv.setItem(slot, null);
+        if (event instanceof Cancellable) {
+            ((Cancellable) event).setCancelled(true);
+        }
+
+        if (inv.getHelmet() == null) {
+            inv.setHelmet(item);
+            inv.setItem(slot, null);
+        }
     }
 }

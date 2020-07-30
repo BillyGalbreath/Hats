@@ -24,7 +24,7 @@ public class CmdHat implements TabExecutor {
                         .map(HumanEntity::getName).collect(Collectors.toList());
             } else if (args.length == 2) {
                 return Arrays.stream(Hat.values())
-                        .filter(hat -> hat.getName().toLowerCase().startsWith(args[1].toLowerCase()))
+                        .filter(hat -> hat.name().toLowerCase().startsWith(args[1].toLowerCase()))
                         .map(hat -> hat.name().toLowerCase()).collect(Collectors.toList());
             }
         }

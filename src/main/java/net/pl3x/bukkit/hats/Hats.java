@@ -5,6 +5,7 @@ import net.pl3x.bukkit.hats.command.CmdHats;
 import net.pl3x.bukkit.hats.configuration.Config;
 import net.pl3x.bukkit.hats.configuration.Lang;
 import net.pl3x.bukkit.hats.hat.Hat;
+import net.pl3x.bukkit.hats.listener.AetherialListener;
 import net.pl3x.bukkit.hats.listener.BukkitListener;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.PluginCommand;
@@ -25,6 +26,7 @@ public class Hats extends JavaPlugin {
         Hat.values(); // init the enum
 
         getServer().getPluginManager().registerEvents(new BukkitListener(), this);
+        getServer().getPluginManager().registerEvents(new AetherialListener(this), this);
 
         registerCommand("hat", new CmdHat());
         registerCommand("hats", new CmdHats(this));

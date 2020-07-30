@@ -11,6 +11,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public enum Hat {
@@ -152,9 +153,11 @@ public enum Hat {
     CROWN_IRON(134, "Iron Crown", new Shape("IEI", "III"), new Ingredient('E', Material.EMERALD), new Ingredient('I', Material.IRON_INGOT)),
     CROWN_GOLD(135, "Gold Crown", new Shape("GEG", "GGG"), new Ingredient('E', Material.EMERALD), new Ingredient('G', Material.GOLD_INGOT)),
     CROWN_DIAMOND(136, "Diamond Crown", new Shape("DED", "DDD"), new Ingredient('E', Material.EMERALD), new Ingredient('D', Material.DIAMOND)),
-    CROWN_AETHERIAL(137, "Aetherial Crown"), // epic crate
+
+    CROWN_AETHERIAL(Material.SHEARS, 1, "Aetherial Crown"), // epic crate
     ;
 
+    private final Material material;
     private final int model;
     private final String name;
     private final ItemStack item;
@@ -165,12 +168,21 @@ public enum Hat {
         this(model, name, null);
     }
 
+    Hat(Material material, int model, String name) {
+        this(material, model, name, null);
+    }
+
     Hat(int model, String name, Shape shape, Ingredient... ingredients) {
+        this(Material.FEATHER, model, name, shape, ingredients);
+    }
+
+    Hat(Material material, int model, String name, Shape shape, Ingredient... ingredients) {
+        this.material = material;
         this.model = model;
         this.name = name;
         this.shape = shape;
         this.ingredients = ingredients;
-        this.item = new ItemStack(Material.FEATHER);
+        this.item = new ItemStack(material);
         this.item.setCustomModelData(model);
         this.item.setDisplayName(ChatColor.WHITE + this.name);
     }
@@ -204,30 +216,33 @@ public enum Hat {
         if (item == null) {
             return null;
         }
-        if (item.getType() != Material.FEATHER) {
+        if (!item.hasItemMeta()) {
             return null;
         }
         if (!item.hasCustomModelData()) {
             return null;
         }
-        return Hat.getHat(item.getCustomModelData());
+        return Hat.getHat(item.getType(), item.getCustomModelData());
     }
 
     public static Hat getHat(String name) {
         return BY_NAME.get(name.toUpperCase());
     }
 
-    public static Hat getHat(int model) {
-        return BY_MODEL.get(model);
+    public static Hat getHat(Material material, int model) {
+        Map<Integer, Hat> hats = BY_MODEL.get(material);
+        return hats == null ? null : hats.get(model);
     }
 
     private static final Map<String, Hat> BY_NAME = Maps.newHashMap();
-    private static final Map<Integer, Hat> BY_MODEL = Maps.newHashMap();
+    private static final Map<Material, Map<Integer, Hat>> BY_MODEL = Maps.newHashMap();
 
     static {
         for (Hat hat : values()) {
             BY_NAME.put(hat.name(), hat);
-            BY_MODEL.put(hat.model, hat);
+            Map<Integer, Hat> hats = BY_MODEL.getOrDefault(hat.material, new HashMap<>());
+            hats.put(hat.model, hat);
+            BY_MODEL.put(hat.material, hats);
             hat.setRecipe();
         }
     }
