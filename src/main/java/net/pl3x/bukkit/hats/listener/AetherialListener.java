@@ -1,12 +1,12 @@
 package net.pl3x.bukkit.hats.listener;
 
-import net.minecraft.server.v1_16_R1.NBTTagCompound;
+import net.minecraft.server.v1_16_R2.NBTTagCompound;
 import net.pl3x.bukkit.hats.Hats;
 import net.pl3x.bukkit.hats.hat.Hat;
 import net.pl3x.purpur.event.inventory.AnvilTakeResultEvent;
 import net.pl3x.purpur.event.inventory.AnvilUpdateResultEvent;
 import org.bukkit.GameMode;
-import org.bukkit.craftbukkit.v1_16_R1.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_16_R2.inventory.CraftItemStack;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
